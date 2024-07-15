@@ -1,4 +1,4 @@
-FROM golang:1.14 AS build
+FROM anolis-registry.cn-zhangjiakou.cr.aliyuncs.com/openanolis/golang:1.19.4-8.6 AS builder
 WORKDIR /go/src/dmdb_exporter
 
 ENV GOPROXY https://goproxy.io
@@ -8,7 +8,7 @@ COPY . .
 RUN go build  -o  dmdb_exporter main.go
 
 
-FROM frolvlad/alpine-glibc:glibc-2.29
+FROM frolvlad/alpine-glibc
 LABEL authors=""
 LABEL maintainer=""
 
