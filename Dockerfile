@@ -1,7 +1,4 @@
-ARG GOVERSION=1.20
-ARG GOARCH
-ARG GOARCH=adm64
-FROM registry.cn-hangzhou.aliyuncs.com/zjm-lemon/dmdb-exporter AS builder
+FROM golang:1.14 AS build
 WORKDIR /go/src/dmdb_exporter
 
 ENV GOPROXY https://goproxy.io
